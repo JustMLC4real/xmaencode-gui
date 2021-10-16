@@ -1,0 +1,31 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="xmaencode_gui.MainWindow"
+        mc:Ignorable="d"
+        Title="xmaencode-gui" Height="240" Width="800" MinHeight="240" MinWidth="800">
+    <Grid Background="#FF181818">
+        <Label Content="Songs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <hc:TextBox x:Name="TextBox_Songs" Margin="10,45,53,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <Button HorizontalAlignment="Right" Margin="0,45,10,0" VerticalAlignment="Top" hc:IconElement.Geometry="{StaticResource DragHorizontalGeometry}" Width="38" Click="Button_Songs_Browse"/>
+        <Label Content="Songs to be converted to XMA." HorizontalAlignment="Right" Margin="0,10,53,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" FontStyle="Italic">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+
+        <Label Content="Output Directory" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <hc:TextBox x:Name="TextBox_OutputDir" Margin="10,115,53,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <Button HorizontalAlignment="Right" Margin="0,115,10,0" VerticalAlignment="Top" hc:IconElement.Geometry="{StaticResource DragHorizontalGeometry}" Width="38" Click="Button_OutputDir_Browse"/>
+        <Label Content="Directory to save the converted XMAs to." HorizontalAlignment="Right" Margin="0,80,53,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" FontStyle="Italic">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+
+        <CheckBox x:Name="Checkbox_Loop" Content="Loop" HorizontalAlignment="Left" Margin="10,0,0,16" VerticalAlignment="Bottom" IsChecked="True" ToolTip="Loop all the converted XMAs, using vgmstream's loop points if any are found."/>
+        <Button Content="Convert" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="128" Click="ConvertSongs"/>
+    </Grid>
+</Window>
